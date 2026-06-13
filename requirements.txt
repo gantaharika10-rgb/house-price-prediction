@@ -3,3 +3,4 @@ flask-cors
 joblib
 numpy
 scikit-learn
+scikit-learn==1.2.2
