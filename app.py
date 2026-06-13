@@ -8,11 +8,12 @@ import joblib, json, numpy as np, os, sqlite3, datetime
 
 app = Flask(__name__, static_folder=".")
 CORS(app)
-
+# encoders not used → remove or comment
+# encoders = joblib.load("model/encoders.pkl")
 # ── Load ML Model ─────────────────────────────────────────
 BASE     = os.path.dirname(os.path.abspath(__file__))
 model = joblib.load("model.pkl")
-encoders = joblib.load(os.path.join(BASE, "model", "encoders.pkl"))
+
 with open(os.path.join(BASE, "model", "meta.json")) as f:
     meta = json.load(f)
 print(f"✅ Model loaded — Accuracy: {meta['accuracy']}%")
