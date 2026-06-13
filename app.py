@@ -11,7 +11,7 @@ CORS(app)
 
 # ── Load ML Model ─────────────────────────────────────────
 BASE     = os.path.dirname(os.path.abspath(__file__))
-model    = joblib.load(os.path.join(BASE, "model", "model.pkl"))
+model = joblib.load("model.pkl")
 encoders = joblib.load(os.path.join(BASE, "model", "encoders.pkl"))
 with open(os.path.join(BASE, "model", "meta.json")) as f:
     meta = json.load(f)
